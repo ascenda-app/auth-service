@@ -6,7 +6,7 @@ namespace AuthService.Infrastructure.ExternalServices;
 
 internal sealed record PasswordResetEmailContent(string Subject, string Html, string Text)
 {
-    private const string ResetSubject = "Restablece tu contraseña de Peaker";
+    private const string ResetSubject = "Restablece tu contraseña de Ascenda";
 
     public static PasswordResetEmailContent For(EmailConfirmationOptions options, string rawToken)
     {
@@ -33,7 +33,7 @@ internal sealed record PasswordResetEmailContent(string Subject, string Html, st
 
     private static string BuildHtml(string resetUrl, string minutes) =>
         $"""
-         <p>Hemos recibido una petición para restablecer tu contraseña de Peaker.</p>
+         <p>Hemos recibido una petición para restablecer tu contraseña de Ascenda.</p>
          <p><a href="{WebUtility.HtmlEncode(resetUrl)}">Elegir una contraseña nueva</a></p>
          <p>El enlace caduca en {minutes} minutos y solo puede usarse una vez.</p>
          <p>Si no has sido tú, ignora este correo: tu contraseña actual sigue siendo válida.</p>
@@ -41,7 +41,7 @@ internal sealed record PasswordResetEmailContent(string Subject, string Html, st
 
     private static string BuildText(string resetUrl, string minutes) =>
         $"""
-         Hemos recibido una petición para restablecer tu contraseña de Peaker.
+         Hemos recibido una petición para restablecer tu contraseña de Ascenda.
 
          Elige una contraseña nueva aquí:
          {resetUrl}

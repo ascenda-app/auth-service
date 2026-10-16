@@ -6,7 +6,7 @@ namespace AuthService.Infrastructure.ExternalServices;
 
 internal sealed record ConfirmationEmailContent(string Subject, string Html, string Text)
 {
-    private const string ConfirmationSubject = "Confirma tu correo en Peaker";
+    private const string ConfirmationSubject = "Confirma tu correo en Ascenda";
 
     public static ConfirmationEmailContent For(EmailConfirmationOptions options, string rawToken)
     {
@@ -33,7 +33,7 @@ internal sealed record ConfirmationEmailContent(string Subject, string Html, str
 
     private static string BuildHtml(string confirmationUrl, string hours) =>
         $"""
-         <p>¡Bienvenido a Peaker!</p>
+         <p>¡Bienvenido a Ascenda!</p>
          <p>Confirma tu dirección de correo para poder registrar tus ascensiones:</p>
          <p><a href="{WebUtility.HtmlEncode(confirmationUrl)}">Confirmar mi correo</a></p>
          <p>El enlace caduca en {hours} horas y solo puede usarse una vez.</p>
@@ -41,7 +41,7 @@ internal sealed record ConfirmationEmailContent(string Subject, string Html, str
 
     private static string BuildText(string confirmationUrl, string hours) =>
         $"""
-         ¡Bienvenido a Peaker!
+         ¡Bienvenido a Ascenda!
 
          Confirma tu dirección de correo para poder registrar tus ascensiones:
          {confirmationUrl}

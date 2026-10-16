@@ -11,7 +11,7 @@ internal static class ApiTestHelpers
 {
     public const string DefaultPassword = "correct-horse-battery-staple";
 
-    public static string UniqueEmail() => $"user-{Guid.CreateVersion7():N}@peaker.io";
+    public static string UniqueEmail() => $"user-{Guid.CreateVersion7():N}@example.com";
 
     public static string UniqueUsername() => $"hiker{Guid.CreateVersion7():N}"[..24];
 

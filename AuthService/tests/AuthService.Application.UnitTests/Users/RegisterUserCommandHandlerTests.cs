@@ -13,7 +13,7 @@ namespace AuthService.Application.UnitTests.Users;
 public sealed class RegisterUserCommandHandlerTests
 {
     private static readonly RegisterUserCommand Command =
-        new("Hiker@Peaker.io", "hiker", "correct-horse-battery", true);
+        new("Hiker@Example.com", "hiker", "correct-horse-battery", true);
 
     private readonly IUserRepository _userRepository = Substitute.For<IUserRepository>();
     private readonly IPasswordHasher _passwordHasher = Substitute.For<IPasswordHasher>();

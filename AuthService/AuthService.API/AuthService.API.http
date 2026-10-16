@@ -5,7 +5,7 @@ POST {{AuthService.API_HostAddress}}/api/auth/register
 Content-Type: application/json
 
 {
-  "email": "hiker@peaker.io",
+  "email": "hiker@example.com",
   "username": "hiker",
   "password": "correct-horse-battery-staple"
 }
@@ -15,7 +15,7 @@ POST {{AuthService.API_HostAddress}}/api/auth/login
 Content-Type: application/json
 
 {
-  "identifier": "hiker@peaker.io",
+  "identifier": "hiker@example.com",
   "password": "correct-horse-battery-staple"
 }
 

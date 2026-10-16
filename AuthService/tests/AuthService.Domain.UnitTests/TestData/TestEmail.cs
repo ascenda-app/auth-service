@@ -4,11 +4,11 @@ namespace AuthService.Domain.UnitTests.TestData;
 
 internal static class TestEmail
 {
-    public const string Raw = "Hiker@Peaker.IO";
+    public const string Raw = "Hiker@Example.COM";
 
-    public const string Normalized = "hiker@peaker.io";
+    public const string Normalized = "hiker@example.com";
 
-    public const string PseudonymValue = "deleted+0123456789abcdef@peaker.invalid";
+    public const string PseudonymValue = "deleted+0123456789abcdef@ascenda.invalid";
 
     public static Email Create() => Email.Create(Raw).Value;
 

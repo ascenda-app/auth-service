@@ -7,7 +7,7 @@ namespace AuthService.Infrastructure.Security;
 internal sealed class EmailPseudonymizer : IEmailPseudonymizer
 {
     private const string LocalPartPrefix = "deleted+";
-    private const string ReservedDomain = "@peaker.invalid";
+    private const string ReservedDomain = "@ascenda.invalid";
 
     public Email Pseudonymize(Email email) =>
         Email.Create($"{LocalPartPrefix}{SubjectHash.Of(email.Value)}{ReservedDomain}").Value;

@@ -7,7 +7,7 @@ namespace AuthService.IntegrationTests.ExternalServices;
 
 public sealed class ConfirmationEmailContentTests
 {
-    private const string Recipient = "hiker@peaker.io";
+    private const string Recipient = "hiker@example.com";
     private const string RawToken = "raw-token";
 
     [Fact]
@@ -15,8 +15,8 @@ public sealed class ConfirmationEmailContentTests
     {
         using MimeMessage message = ConfirmationEmailContent.ToMimeMessage(Options(), Recipient, RawToken);
 
-        message.From.Mailboxes.Single().Name.Should().Be("Peaker");
-        message.From.Mailboxes.Single().Address.Should().Be("no-reply@peaker.io");
+        message.From.Mailboxes.Single().Name.Should().Be("Ascenda");
+        message.From.Mailboxes.Single().Address.Should().Be("no-reply@localhost");
         message.To.Mailboxes.Single().Address.Should().Be(Recipient);
         message.Subject.Should().NotBeNullOrWhiteSpace();
     }
@@ -49,8 +49,8 @@ public sealed class ConfirmationEmailContentTests
 
     private static EmailConfirmationOptions Options() => new()
     {
-        FromAddress = "no-reply@peaker.io",
-        FromName = "Peaker",
-        ConfirmationLinkTemplate = "https://peaker.io/confirm-email?token={token}"
+        FromAddress = "no-reply@localhost",
+        FromName = "Ascenda",
+        ConfirmationLinkTemplate = "https://localhost/confirm-email?token={token}"
     };
 }

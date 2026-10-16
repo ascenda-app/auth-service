@@ -60,7 +60,7 @@ public sealed class UsernameTests
     [InlineData("ruben__fer")]
     [InlineData("ruben fer")]
     [InlineData("rubén")]
-    [InlineData("ruben@peaker")]
+    [InlineData("ruben@example")]
     public void Create_WithInvalidFormat_ReturnsUsernameInvalid(string raw)
     {
         Result<Username> result = Username.Create(raw);

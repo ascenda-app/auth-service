@@ -8,10 +8,10 @@ namespace AuthService.Application.UnitTests.TestData;
 
 internal static class Factories
 {
-    public const string DefaultEmail = "hiker@peaker.io";
+    public const string DefaultEmail = "hiker@example.com";
     public const string DefaultUsername = "hiker";
     public const string DefaultHash = "argon2id$hash";
-    public const string PseudonymizedEmail = "deleted+0123456789abcdef@peaker.invalid";
+    public const string PseudonymizedEmail = "deleted+0123456789abcdef@ascenda.invalid";
 
     public const string TermsVersion = "2026-08-11";
 

@@ -56,5 +56,5 @@ public sealed class UserRegisteredDomainEventHandlerTests
     }
 
     private static UserRegisteredDomainEvent NewDomainEvent() =>
-        new(Guid.CreateVersion7(), "hiker@peaker.io", "hiker");
+        new(Guid.CreateVersion7(), "hiker@example.com", "hiker");
 }

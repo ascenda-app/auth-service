@@ -7,10 +7,10 @@ public sealed class EmailConfirmationOptions
     public const string SectionName = "EmailConfirmation";
 
     [Required]
-    public string FromAddress { get; init; } = "no-reply@peaker.io";
+    public string FromAddress { get; init; } = "no-reply@localhost";
 
     [Required]
-    public string FromName { get; init; } = "Peaker";
+    public string FromName { get; init; } = "Ascenda";
 
     [Required]
     public string ConfirmationLinkTemplate { get; init; } = "http://localhost:3000/confirm-email?token={token}";

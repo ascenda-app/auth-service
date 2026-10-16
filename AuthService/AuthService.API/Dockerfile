@@ -1,4 +1,4 @@
-# Contexto de build: la raíz del monorepo (peaker-app), para incluir common-library.
+# Contexto de build: la raíz del monorepo (ascenda-app), para incluir common-library.
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src

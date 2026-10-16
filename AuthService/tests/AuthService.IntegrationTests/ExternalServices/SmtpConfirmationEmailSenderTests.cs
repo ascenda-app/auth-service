@@ -13,7 +13,7 @@ public sealed class SmtpConfirmationEmailSenderTests : IAsyncLifetime
 {
     private const int SmtpPort = 1025;
     private const int ApiPort = 8025;
-    private const string Recipient = "hiker@peaker.io";
+    private const string Recipient = "hiker@example.com";
 
     private readonly IContainer _mailpit = new ContainerBuilder("axllent/mailpit:v1.21")
         .WithPortBinding(SmtpPort, assignRandomHostPort: true)
@@ -34,8 +34,8 @@ public sealed class SmtpConfirmationEmailSenderTests : IAsyncLifetime
 
         JsonElement message = await FetchOnlyMessageAsync();
         message.GetProperty("To")[0].GetProperty("Address").GetString().Should().Be(Recipient);
-        message.GetProperty("From").GetProperty("Address").GetString().Should().Be("no-reply@peaker.io");
-        message.GetProperty("From").GetProperty("Name").GetString().Should().Be("Peaker");
+        message.GetProperty("From").GetProperty("Address").GetString().Should().Be("no-reply@localhost");
+        message.GetProperty("From").GetProperty("Name").GetString().Should().Be("Ascenda");
         message.GetProperty("Subject").GetString().Should().NotBeNullOrWhiteSpace();
         message.GetProperty("HTML").GetString().Should().Contain(rawToken);
         message.GetProperty("Text").GetString().Should().Contain(rawToken);
@@ -68,9 +68,9 @@ public sealed class SmtpConfirmationEmailSenderTests : IAsyncLifetime
         new(
             Options.Create(new EmailConfirmationOptions
             {
-                FromAddress = "no-reply@peaker.io",
-                FromName = "Peaker",
-                ConfirmationLinkTemplate = "https://peaker.io/confirm-email?token={token}"
+                FromAddress = "no-reply@localhost",
+                FromName = "Ascenda",
+                ConfirmationLinkTemplate = "https://localhost/confirm-email?token={token}"
             }),
             new SmtpMailer(Options.Create(transport)),
             NullLogger<SmtpConfirmationEmailSender>.Instance);

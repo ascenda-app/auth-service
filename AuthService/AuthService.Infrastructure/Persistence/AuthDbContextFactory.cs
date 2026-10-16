@@ -8,7 +8,7 @@ internal sealed class AuthDbContextFactory : IDesignTimeDbContextFactory<AuthDbC
     private const string ConnectionStringVariable = "ConnectionStrings__AuthDatabase";
 
     private const string ModelOnlyConnectionString =
-        "server=localhost;port=3307;database=peaker_auth";
+        "server=localhost;port=3307;database=ascenda_auth";
 
     public AuthDbContext CreateDbContext(string[] args)
     {

@@ -8,7 +8,7 @@ namespace AuthService.Domain.UnitTests.Users;
 public sealed class EmailTests
 {
     [Theory]
-    [InlineData("Hiker@Peaker.IO", "hiker@peaker.io")]
+    [InlineData("Hiker@Example.COM", "hiker@example.com")]
     [InlineData("  USER@Test.Com  ", "user@test.com")]
     public void Create_WithValidEmail_NormalizesToLowercaseAndTrimmed(string raw, string expected)
     {
@@ -40,7 +40,7 @@ public sealed class EmailTests
     [Fact]
     public void Create_ExceedingMaxLength_ReturnsEmailTooLong()
     {
-        string raw = new string('a', Email.MaxLength) + "@peaker.io";
+        string raw = new string('a', Email.MaxLength) + "@example.com";
 
         Result<Email> result = Email.Create(raw);
 

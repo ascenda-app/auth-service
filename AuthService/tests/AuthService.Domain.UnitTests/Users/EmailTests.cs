@@ -8,7 +8,7 @@ namespace AuthService.Domain.UnitTests.Users;
 public sealed class EmailTests
 {
     [Theory]
-    [InlineData("Hiker@Example.IO", "hiker@example.com")]
+    [InlineData("Hiker@Example.COM", "hiker@example.com")]
     [InlineData("  USER@Test.Com  ", "user@test.com")]
     public void Create_WithValidEmail_NormalizesToLowercaseAndTrimmed(string raw, string expected)
     {

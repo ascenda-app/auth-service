@@ -4,7 +4,7 @@ namespace AuthService.Domain.UnitTests.TestData;
 
 internal static class TestEmail
 {
-    public const string Raw = "Hiker@Example.IO";
+    public const string Raw = "Hiker@Example.COM";
 
     public const string Normalized = "hiker@example.com";
 

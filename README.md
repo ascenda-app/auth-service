@@ -1,7 +1,7 @@
 # auth-service
 
 Registro, inicio de sesión, confirmación de correo y emisión de JWT. MySQL 8.4
-(`peaker_auth`). Ver `.claude/docs/DESIGN.md` §4.
+(`ascenda_auth`). Ver `.claude/docs/DESIGN.md` §4.
 
 ## Puesta en marcha local
 

@@ -39,7 +39,7 @@ internal static class AuthenticationExtensions
             ValidateIssuerSigningKey = true,
             IssuerSigningKeys = signingKeyProvider.CreatePublicSecurityKeys(),
             NameClaimType = "sub",
-            RoleClaimType = PeakerRoles.ClaimType,
+            RoleClaimType = AscendaRoles.ClaimType,
             ClockSkew = TimeSpan.FromSeconds(30)
         };
     }

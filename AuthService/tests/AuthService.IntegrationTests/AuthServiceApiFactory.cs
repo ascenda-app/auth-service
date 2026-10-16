@@ -20,9 +20,9 @@ namespace AuthService.IntegrationTests;
 public sealed class AuthServiceApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private readonly MySqlContainer _mySql = new MySqlBuilder("mysql:8.4")
-        .WithDatabase("peaker_auth")
-        .WithUsername("peaker")
-        .WithPassword("peaker")
+        .WithDatabase("ascenda_auth")
+        .WithUsername("ascenda")
+        .WithPassword("ascenda")
         .Build();
 
     private readonly RabbitMqContainer _rabbitMq = new RabbitMqBuilder("rabbitmq:3-management-alpine").Build();
@@ -63,7 +63,7 @@ public sealed class AuthServiceApiFactory : WebApplicationFactory<Program>, IAsy
         User user = await context.Users.AsNoTracking().SingleAsync(candidate => candidate.Id == userId);
 
         return user.Email.Value.StartsWith("deleted+", StringComparison.Ordinal) &&
-               user.Email.Value.EndsWith("@peaker.invalid", StringComparison.Ordinal);
+               user.Email.Value.EndsWith("@ascenda.invalid", StringComparison.Ordinal);
     }
 
     public async Task GrantAdminAsync(Guid userId)

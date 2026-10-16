@@ -110,7 +110,7 @@ public sealed class LoginEndpointTests(AuthServiceApiFactory factory)
 
         JsonWebToken accessToken = new(tokens.AccessToken);
 
-        accessToken.Claims.Where(claim => claim.Type == PeakerRoles.ClaimType).Should().BeEmpty();
+        accessToken.Claims.Where(claim => claim.Type == AscendaRoles.ClaimType).Should().BeEmpty();
     }
 
     [Fact]
@@ -124,9 +124,9 @@ public sealed class LoginEndpointTests(AuthServiceApiFactory factory)
         JsonWebToken accessToken = new(tokens.AccessToken);
 
         accessToken.Claims
-            .Where(claim => claim.Type == PeakerRoles.ClaimType)
+            .Where(claim => claim.Type == AscendaRoles.ClaimType)
             .Select(claim => claim.Value)
-            .Should().Equal(PeakerRoles.Admin);
+            .Should().Equal(AscendaRoles.Admin);
     }
 
     [Fact]

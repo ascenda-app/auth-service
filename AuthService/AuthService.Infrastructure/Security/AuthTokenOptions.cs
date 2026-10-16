@@ -4,7 +4,7 @@ public sealed class AuthTokenOptions
 {
     public const string SectionName = "AuthToken";
 
-    public string Issuer { get; init; } = "peaker-auth";
+    public string Issuer { get; init; } = "ascenda-auth";
 
     public IReadOnlyList<string> Audiences { get; init; } = [];
 

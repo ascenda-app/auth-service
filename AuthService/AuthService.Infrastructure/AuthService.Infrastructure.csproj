@@ -15,6 +15,9 @@
       <PackageReference Include="Microsoft.Extensions.Http.Resilience" />
       <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" />
       <PackageReference Include="MySql.EntityFrameworkCore" />
+      <!-- Referencia explicita: entra por MailKit -> MimeKit. Fija 10.0.13 (parcheada)
+           en lugar de la 10.0.0 vulnerable (NU1902/NU1903). -->
+      <PackageReference Include="System.Security.Cryptography.Pkcs" />
     </ItemGroup>
 
     <ItemGroup>

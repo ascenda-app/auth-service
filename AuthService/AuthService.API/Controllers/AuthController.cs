@@ -18,14 +18,14 @@ public sealed class AuthController(ISender sender, IUserContext userContext) : C
 {
     [HttpPost("register")]
     [AllowAnonymous]
-    [ProducesResponseType(StatusCodes.Status202Accepted)]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     public async Task<IActionResult> Register(RegisterRequest request, CancellationToken cancellationToken)
     {
         Result result = await sender.Send(request.ToCommand(), cancellationToken);
 
-        return result.ToActionResult(() => StatusCode(StatusCodes.Status202Accepted));
+        return result.ToActionResult(NoContent);
     }
 
     [HttpPost("login")]

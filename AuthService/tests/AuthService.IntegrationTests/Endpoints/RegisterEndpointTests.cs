@@ -10,11 +10,12 @@ public sealed class RegisterEndpointTests(AuthServiceApiFactory factory)
     private readonly HttpClient _client = factory.CreateClient();
 
     [Fact]
-    public async Task Register_WithNewCredentials_ReturnsAccepted()
+    public async Task Register_WithNewCredentials_ReturnsNoContentWithoutBody()
     {
         using HttpResponseMessage response = await _client.RegisterAsync(ApiTestHelpers.NewUser());
 
-        response.StatusCode.Should().Be(HttpStatusCode.Accepted);
+        response.StatusCode.Should().Be(HttpStatusCode.NoContent);
+        (await response.Content.ReadAsStringAsync()).Should().BeEmpty();
     }
 
     [Fact]
